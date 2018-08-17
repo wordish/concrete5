@@ -74,7 +74,11 @@ abstract class ItemList
         $this->executeSanitizedSortBy($field, $direction);
     }
 
-    /** Returns a full array of results. */
+    /**
+     * Returns a full array of results.
+     *
+     * @return array
+     */
     public function getResults()
     {
         $results = array();
@@ -189,6 +193,7 @@ abstract class ItemList
     /**
      * Deprecated – call the pagination factory directly.
      * @deprecated
+     * @see PaginationFactory::createPaginationObject()
      * @return \Concrete\Core\Search\Pagination\Pagination
      */
     public function getPagination()
@@ -229,6 +234,7 @@ abstract class ItemList
 
     /**
      * @deprecated
+     * @see ItemList::getResults()
      */
     public function get()
     {
@@ -237,7 +243,7 @@ abstract class ItemList
 
     /**
      * Allow to modify the auto-pagination parameters and the auto-sorting parameters
-     * 
+     *
      * @param mixed $nameSpace Content that will be added to the parameters
      */
     public function setNameSpace($nameSpace)

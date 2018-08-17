@@ -22,7 +22,12 @@ use Pagerfanta\Adapter\DoctrineDbalAdapter;
 use Concrete\Core\Site\Tree\TreeInterface;
 
 /**
- * An object that allows a filtered list of pages to be returned.
+ * An object  object that allows a filtered list of pages to be returned based on different criteria.
+ *
+ * Use this object (rather than querying the database directly) to sort,
+ * search, or filter a list of pages, as it handles the compexities of
+ * permissions, page versions, and aliasing. It also provides a nice API on
+ * top of the fairly complex table structure underneath.
  */
 class PageList extends DatabaseItemList implements PagerProviderInterface, PaginationProviderInterface
 {
